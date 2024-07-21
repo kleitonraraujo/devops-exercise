@@ -58,3 +58,36 @@ e candidatos, se você acha que tem um fit bom com a empresa, não importa como
 você se identifica, sua idade, gênero e localização geográfica, você é bem 
 vindo, aplique! :rainbow_flag: :brown_heart: :curly_haired_woman: :person_white_hair:
 
+
+
+Desafio Vaga Devops
+===================
+
+Supondo que já tenha o Docker instalado e configurado, para executar este projeto:
+
+## Inicialização
+
+```bash
+docker-compose up -d
+```
+
+Este comando compilará a imagem docker do projeto e criará 3 instâncias da aplicação
+juntamente com uma instância do web server (nginx)
+
+## Remoção
+
+```bash
+docker-compose down --remove-orphans -v
+```
+
+Removerá tudo que está definido no arquivo `docker-compose.yml`
+
+## Verificação
+
+Consegue-se verificar a aplicação pela URL:
+
+```
+http://localhost
+```
+
+
