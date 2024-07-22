@@ -1,7 +1,7 @@
 Desafio Vaga Devops
 ===================
 
-Supondo que já tenha o Docker instalado e configurado, para executar este projeto:
+Supondo que já tenha o Docker e o docker-compose instalado e configurado, para executar este projeto:
 
 Havia um erro que estava indicando que havia uma incompatibilidade entre a versão do Ruby especificada do Gemfile e a versão do Ruby disponível no ambiente Docker onde está construindo sua imagem.
 Foi ajustado para a versão 3.2.2.
