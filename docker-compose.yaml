@@ -4,21 +4,24 @@ networks:
 
 services:
   app:
+
     build:
       context: .
       dockerfile: Dockerfile
     expose:
-      - "3000"
+      - 3000
+
     environment:
       - RAILS_ENV=development
-    command: sh -c "rm -f /rails/tmp/pids/server.pid && bundle exec rails db:migrate && ./bin/rails server -b 0.0.0.0"
-    deploy:
-      replicas: 3
-      update_config:
-        parallelism: 1
-        delay: 10s
+    command: ["sh", "-c", "bundle exec rails db:migrate && ./bin/rails server -b 0.0.0.0"]
     networks:
       - app-network
+  
+    deploy:
+          replicas: 3
+          update_config:
+            parallelism: 1
+            delay: 10s
 
   nginx:
     image: nginx:alpine
@@ -29,6 +32,9 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     depends_on:
       - app
+
     networks:
       - app-network
-      
+
+
+    
